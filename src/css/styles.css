@@ -4,7 +4,7 @@
 
 /* Verifique se estes caminhos estão 100% corretos */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('variables.css'); /* Mudei para o caminho mais simples. Se 'variables.css' está na mesma pasta, use este. */
+@import url('variables.css');
 
 /* Reset básico */
 * {
@@ -30,6 +30,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* CORREÇÃO: Adicionado para que o menu absoluto seja posicionado em relação a ele */
+    position: relative; 
 }
 
 .logo {
@@ -57,7 +59,8 @@ header {
     gap: 0.5rem;
     width: 100%;
     position: absolute; /* Posiciona o menu abaixo do header */
-    top: 80px; /* Ajuste se o seu header tiver altura diferente */
+    /* CORREÇÃO: Usar 100% garante que o menu comece logo após o fim do .navbar */
+    top: 100%; 
     background-color: var(--color-neutral-1);
     left: 0;
     padding: 1rem;
