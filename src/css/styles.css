@@ -1,0 +1,151 @@
+/* ============================================= */
+/* CONFIGURAÇÕES GLOBAIS             */
+/* ============================================= */
+
+/* Verifique se estes caminhos estão 100% corretos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('variables.css'); /* Mudei para o caminho mais simples. Se 'variables.css' está na mesma pasta, use este. */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================= */
+/* ESTILOS PARA MOBILE (PADRÃO)      */
+/* ============================================= */
+
+header {
+    background: var(--color-neutral-1);
+    position: sticky;
+    top: 0;
+    padding: 12px 4%;
+    z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 80px; 
+    height: auto; 
+}
+
+/* Botão Hamburger (visível no mobile) */
+.btn-mobile {
+    display: block; 
+    background: none;
+    border: none;
+    color: var(--color-neutral-8); 
+    font-size: 1.8rem; 
+    cursor: pointer;
+    margin-right: 12px; 
+}
+
+/* Menu de navegação (escondido por padrão no mobile) */
+/* USANDO O ID #nav-links */
+#nav-links {
+    display: none; /* ESCONDIDO no mobile por padrão */
+    list-style: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    position: absolute; /* Posiciona o menu abaixo do header */
+    top: 80px; /* Ajuste se o seu header tiver altura diferente */
+    background-color: var(--color-neutral-1);
+    left: 0;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+/* Classe .show (adicionada pelo JavaScript) faz o menu aparecer */
+/* USANDO O ID #nav-links */
+#nav-links.show {
+    display: flex; /* MOSTRA o menu quando a classe 'show' está presente */
+}
+
+#nav-links li {
+    text-align: center;
+    padding: 0.5rem 0; 
+}
+
+#nav-links li a {
+    color: var(--color-neutral-8);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block; 
+}
+
+#nav-links li a:hover {
+    color: var(--color-primary-1);
+}
+
+/* Botão "Contatar" (escondido no mobile) */
+.btn-default {
+    display: none; /* Escondido no mobile */
+}
+
+/* ============================================= */
+/* MEDIA QUERIES (DESKTOP)         */
+/* ============================================= */
+
+@media (min-width: 768px) { 
+
+    /* Esconde o botão hamburger no desktop */
+    .btn-mobile {
+        display: none;
+    }
+
+    /* Mostra o menu de navegação na linha no desktop */
+    /* USANDO O ID #nav-links PARA VENCER A ESPECIFICIDADE */
+    #nav-links {
+        display: flex; /* Volta a exibir o menu */
+        flex-direction: row; /* Itens em linha */
+        position: static; /* Remove o posicionamento absoluto */
+        width: auto; /* Largura automática */
+        background-color: transparent; /* Fundo transparente */
+        padding: 0; /* Remove padding */
+        gap: 1.5rem; /* Espaçamento entre os links */
+        box-shadow: none; /* Remove a sombra */
+        
+        /* Garante que o 'top' e 'left' do mobile sejam resetados */
+        top: auto;
+        left: auto;
+    }
+
+    #nav-links li {
+        padding: 0; 
+    }
+
+    #nav-links li a {
+        color: var(--color-neutral-8); 
+        display: inline; 
+    }
+    
+    #nav-links li a:hover {
+        border-bottom: 1px solid var(--color-primary-1); 
+    }
+
+    /* Mostra o botão "Contatar" no desktop */
+    .btn-default {
+        display: block; 
+        padding: 8px 16px; 
+        background-color: var(--color-primary-1); 
+        color: var(--color-neutral-9); 
+        text-decoration: none;
+        border-radius: 5px; 
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-default:hover {
+        background-color: var(--color-primary-2); 
+    }
+}
