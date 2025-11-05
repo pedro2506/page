@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 /* ============================================= */
 /* CONFIGURAÇÕES GLOBAIS             */
 /* ============================================= */
 
 /* Verifique se estes caminhos estão 100% corretos */
-=======
-
-
->>>>>>> df806993a7bc016dc95d29a1648dd7d169e54cfb
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('variables.css');
 
@@ -19,106 +14,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-<<<<<<< HEAD
 /* ============================================= */
 /* ESTILOS PARA MOBILE (PADRÃO)      */
 /* ============================================= */
-=======
-#container{
-    width: 100%;
-    min-height: 50vh;
-    background-image: url('../images/background-mobile.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-a.btn{
-    text-emphasis: none;
-}
-
-.btn{
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-
-}
-
-.btn-mobile{
-    font-size: 1.5rem;
-}
-
-.btn-default{
-    background-color: var(--color-primary-1);
-    color: var(--color-neutral-0);
-
-
-    &:hover {
-        background-color: var(--color-primary-2);
-         }
-        }
-
-.btn-outlined {
-    background-color: transparent;
-    color: var(--color-primary-1);
-    border: 2px solid var(--color-primary-1);
-
-    &:hover {
-        background-color: var(--color-primary-1);
-        color: var(--color-neutral-0)
-    }
-}
-
-#home {
-    display: flex;
-    flex-direction: column;
-    gap:12px;
-    align-items: center;
-    justify-content: center; /* centraliza tudo verticalmente */
-    text-align: center;
-    
-    
-    
-
-    .home-image {
-        width: clamp(250px, 40vw, 380px);
-        height: auto;
-        flex-shrink: 0;
-    }
-    .home-title {
-        color: var(--color-neutral-8);
-        text-align: center;
-        font-size: clamp(3rem, 5vw, 4.3rem);
-        text-transform: uppercase;
-        line-height: 1.2;
-        max-width: 700px;
-
-        span{
-            color: var(--color-primary-1)
-        }
-    }
-    .home-description {
-        color: var(--color-neutral-9);
-        text-align: center;
-        font-size: 1rem;
-        max-width: 600px;
-        font-weight: 500;
-    }    
-    .home-actions {
-        display: flex;
-        gap: 12px;
-        margin-top: 12px;
-    
-    
-        
-    }
-}
->>>>>>> df806993a7bc016dc95d29a1648dd7d169e54cfb
 
 header {
     background: var(--color-neutral-1);
@@ -132,15 +30,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
     /* CORREÇÃO: Adicionado para que o menu absoluto seja posicionado em relação a ele */
-=======
->>>>>>> df806993a7bc016dc95d29a1648dd7d169e54cfb
     position: relative; 
 }
 
 .logo {
-<<<<<<< HEAD
     width: 80px; 
     height: auto; 
 }
@@ -417,70 +311,4 @@ a.btn {
         background-color: var(--color-primary-2); 
     }
 }
-=======
-    width: 90px; 
-    
-}
-
-ul {
-    display: none;
-    list-style: none;
-    flex-direction: column;
-    position: absolute;
-    top: 90px;
-    gap: 0.1rem;
-    width: 100%;
-    background-color: var(--color-neutral-1);
-    left: 0;
-    padding: 1rem;
-
-    li{
-        text-align: center;
-
-        a {
-            color: var(--color-neutral-8);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-
-            &:hover {
-                color: var(--color-primary-1);
-                border-bottom: 1px solid var(--color-primary-1);
-
-
-            }
-        }
-
-    }
-&.show{
-    display: flex;
-}
-
-}
-
-
-
-
-@media (min-width: 769px) {
-    header {
-        .navbar {
-            .btn-mobile {
-                display: none;
-            }
-            ul{
-                display: flex;
-                position: static;
-                flex-direction: row;
-                gap: 1rem;
-                width: auto;
-                padding: 0;
-            }
-            .btn-default {
-                display: block;
-        }
-    }
-
-    }
->>>>>>> df806993a7bc016dc95d29a1648dd7d169e54cfb
 }
