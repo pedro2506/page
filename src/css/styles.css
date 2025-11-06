@@ -1,5 +1,8 @@
+/* ============================================= */
+/* CONFIGURAÇÕES GLOBAIS             */
+/* ============================================= */
 
-
+/* Verifique se estes caminhos estão 100% corretos */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('variables.css');
 
@@ -11,100 +14,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-#container{
-    width: 100%;
-    min-height: 50vh;
-    background-image: url('../images/background-mobile.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-a.btn{
-    text-emphasis: none;
-}
-
-.btn{
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-
-}
-
-.btn-mobile{
-    font-size: 1.5rem;
-}
-
-.btn-default{
-    background-color: var(--color-primary-1);
-    color: var(--color-neutral-0);
-
-
-    &:hover {
-        background-color: var(--color-primary-2);
-         }
-        }
-
-.btn-outlined {
-    background-color: transparent;
-    color: var(--color-primary-1);
-    border: 2px solid var(--color-primary-1);
-
-    &:hover {
-        background-color: var(--color-primary-1);
-        color: var(--color-neutral-0)
-    }
-}
-
-#home {
-    display: flex;
-    flex-direction: column;
-    gap:12px;
-    align-items: center;
-    justify-content: center; /* centraliza tudo verticalmente */
-    text-align: center;
-    
-    
-    
-
-    .home-image {
-        width: clamp(250px, 40vw, 380px);
-        height: auto;
-        flex-shrink: 0;
-    }
-    .home-title {
-        color: var(--color-neutral-8);
-        text-align: center;
-        font-size: clamp(3rem, 5vw, 4.3rem);
-        text-transform: uppercase;
-        line-height: 1.2;
-        max-width: 700px;
-
-        span{
-            color: var(--color-primary-1)
-        }
-    }
-    .home-description {
-        color: var(--color-neutral-9);
-        text-align: center;
-        font-size: 1rem;
-        max-width: 600px;
-        font-weight: 500;
-    }    
-    .home-actions {
-        display: flex;
-        gap: 12px;
-        margin-top: 12px;
-    
-    
-        
-    }
-}
+/* ============================================= */
+/* ESTILOS PARA MOBILE (PADRÃO)      */
+/* ============================================= */
 
 header {
     background: var(--color-neutral-1);
@@ -118,72 +30,283 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* CORREÇÃO: Adicionado para que o menu absoluto seja posicionado em relação a ele */
     position: relative; 
 }
 
 .logo {
-    width: 90px; 
-    
+    width: 80px; 
+    height: auto; 
 }
 
-ul {
-    display: none;
+/* Botão Hamburger (visível no mobile) */
+.btn-mobile {
+    display: block; 
+    background: none;
+    border: none;
+    color: var(--color-neutral-8); 
+    font-size: 1.8rem; 
+    cursor: pointer;
+    margin-right: 12px; 
+}
+
+/* Menu de navegação (escondido por padrão no mobile) */
+/* USANDO O ID #nav-links */
+#nav-links {
+    display: none; /* ESCONDIDO no mobile por padrão */
     list-style: none;
     flex-direction: column;
-    position: absolute;
-    top: 90px;
-    gap: 0.1rem;
+    gap: 0.5rem;
     width: 100%;
+    position: absolute; /* Posiciona o menu abaixo do header */
+    /* CORREÇÃO: Usar 100% garante que o menu comece logo após o fim do .navbar */
+    top: 100%; 
     background-color: var(--color-neutral-1);
     left: 0;
     padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
 
-    li{
-        text-align: center;
+/* Classe .show (adicionada pelo JavaScript) faz o menu aparecer */
+/* USANDO O ID #nav-links */
+#nav-links.show {
+    display: flex; /* MOSTRA o menu quando a classe 'show' está presente */
+}
 
-        a {
-            color: var(--color-neutral-8);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
+#nav-links li {
+    text-align: center;
+    padding: 0.5rem 0; 
+}
 
-            &:hover {
-                color: var(--color-primary-1);
-                border-bottom: 1px solid var(--color-primary-1);
+#nav-links li a {
+    color: var(--color-neutral-8);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block; 
+}
 
+#nav-links li a:hover {
+    color: var(--color-primary-1);
+}
 
-            }
-        }
+#container {
+    background-image: url('../images/fundo-mobile.png');
+    background-size: contain;
+    height: 400vh;
+}
 
+.title {
+    font-size: 2.5rem;
+    color: var(--color-neutral-8);
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 60px;
+        height: 4px;
+        background-color: var(--color-primary-1);
+        display: block;
+        border-radius: 30px;
     }
-&.show{
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+.btn-default {
+    
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
+
+    &:hover {
+        background-color: var(--color-primary-2);
+    }
+}
+
+.btn-outlined {
+    border: 2px solid var(--color-primary-1);
+    color: var(--color-primary-1);
+    background-color: transparent;
+
+    &:hover {
+        background-color: var(--color-primary-1);
+        color: var(--color-neutral-0);
+    }
+}
+
+
+#home {
     display: flex;
-}
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+    padding: 32px 4%;
+    padding-top: clamp(0px, 5vw, 32px);
 
-}
-
-
-
-
-@media (min-width: 769px) {
-    header {
-        .navbar {
-            .btn-mobile {
-                display: none;
-            }
-            ul{
-                display: flex;
-                position: static;
-                flex-direction: row;
-                gap: 1rem;
-                width: auto;
-                padding: 0;
-            }
-            .btn-default {
-                display: block;
+    .home-image {
+        width: clamp(300px, 50%, 400px);
         }
+    .home-title {
+        color:var(--color-neutral-8);
+        text-align: center;
+        font-size: clamp(3rem, 5vw, 4.3rem);
+        text-transform: uppercase;
+        line-height: 1.2;
+        max-width: 700px;
+
+        span {
+            color: var(--color-primary-1);
+        }
+
+}
+.home-description {
+    color: var(--color-neutral-9);
+    text-align: center;
+    font-size:1rem;
+    font-weight: 500;
+    max-width: 600px;
+}
+.home-actions{
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+#trending {
+    padding: 32px 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+}
+
+.trending-cards {
+    display: flex;
+    flex-direction: column; /* Mobile: empilhados */
+    align-items: center; /* Centraliza os cards empilhados */
+    gap: 24px; /* Espaçamento entre os cards */
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.trending-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: clamp(300px, 50%, 400px); 
+    max-width: 380px;
+    overflow: hidden;
+}
+
+/* IMAGEM DENTRO DO CARD: Garante que ela ocupe 100% da largura do seu card */
+.trending-card img {
+    width: 100%; 
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Estilos para o conteúdo textual dentro dos cards */
+.trending-card .trending-rate {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #f5b940; /* Exemplo de cor para a estrela */
+}
+
+.trending-card .trending-description {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-neutral-8);
+    margin-top: 8px;
+}
+
+.trending-card .trending-card-description {
+    margin-top: 4px;
+}
+
+.trending-card .trending-card-description span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-primary-1);
+}
+
+/* ============================================= */
+/* MEDIA QUERIES (DESKTOP)         */
+/* ============================================= */
+
+@media (min-width: 768px) { 
+
+    /* Esconde o botão hamburger no desktop */
+    .btn-mobile {
+        display: none;
     }
 
+    /* Mostra o menu de navegação na linha no desktop */
+    /* USANDO O ID #nav-links PARA VENCER A ESPECIFICIDADE */
+    #nav-links {
+        display: flex; /* Volta a exibir o menu */
+        flex-direction: row; /* Itens em linha */
+        position: static; /* Remove o posicionamento absoluto */
+        width: auto; /* Largura automática */
+        background-color: transparent; /* Fundo transparente */
+        padding: 0; /* Remove padding */
+        gap: 1.5rem; /* Espaçamento entre os links */
+        box-shadow: none; /* Remove a sombra */
+        
+        /* Garante que o 'top' e 'left' do mobile sejam resetados */
+        top: auto;
+        left: auto;
     }
+
+    #nav-links li {
+        padding: 0; 
+    }
+
+    #nav-links li a {
+        color: var(--color-neutral-8); 
+        display: inline; 
+    }
+    
+    #nav-links li a:hover {
+        border-bottom: 1px solid var(--color-primary-1); 
+    }
+
+    /* Mostra o botão "Contatar" no desktop */
+    .btn-default {
+        display: block; 
+        padding: 8px 16px; 
+        background-color: var(--color-primary-1); 
+        color: var(--color-neutral-9); 
+        text-decoration: none;
+        border-radius: 5px; 
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-default:hover {
+        background-color: var(--color-primary-2); 
+    }
+}
 }
