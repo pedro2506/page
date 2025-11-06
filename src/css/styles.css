@@ -1,12 +1,10 @@
 /* ============================================= */
-/* CONFIGURAÇÕES GLOBAIS             */
+/* CONFIGURAÇÕES GLOBAIS                         */
 /* ============================================= */
 
-/* Verifique se estes caminhos estão 100% corretos */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('./variables.css');
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +13,7 @@
 }
 
 /* ============================================= */
-/* ESTILOS PARA MOBILE (PADRÃO)      */
+/* ESTILOS PARA MOBILE (PADRÃO)                  */
 /* ============================================= */
 
 header {
@@ -30,52 +28,45 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* CORREÇÃO: Adicionado para que o menu absoluto seja posicionado em relação a ele */
-    position: relative; 
+    position: relative;
 }
 
 .logo {
-    width: 80px; 
-    height: auto; 
+    width: 80px;
+    height: auto;
 }
 
-/* Botão Hamburger (visível no mobile) */
 .btn-mobile {
-    display: block; 
+    display: block;
     background: none;
     border: none;
-    color: var(--color-neutral-8); 
-    font-size: 1.8rem; 
+    color: var(--color-neutral-8);
+    font-size: 1.8rem;
     cursor: pointer;
-    margin-right: 12px; 
+    margin-right: 12px;
 }
 
-/* Menu de navegação (escondido por padrão no mobile) */
-/* USANDO O ID #nav-links */
 #nav-links {
-    display: none; /* ESCONDIDO no mobile por padrão */
+    display: none;
     list-style: none;
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
-    position: absolute; /* Posiciona o menu abaixo do header */
-    /* CORREÇÃO: Usar 100% garante que o menu comece logo após o fim do .navbar */
-    top: 100%; 
+    position: absolute;
+    top: 100%;
     background-color: var(--color-neutral-1);
     left: 0;
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Classe .show (adicionada pelo JavaScript) faz o menu aparecer */
-/* USANDO O ID #nav-links */
 #nav-links.show {
-    display: flex; /* MOSTRA o menu quando a classe 'show' está presente */
+    display: flex;
 }
 
 #nav-links li {
     text-align: center;
-    padding: 0.5rem 0; 
+    padding: 0.5rem 0;
 }
 
 #nav-links li a {
@@ -84,7 +75,7 @@ header {
     font-size: 1.1rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    display: block; 
+    display: block;
 }
 
 #nav-links li a:hover {
@@ -92,7 +83,7 @@ header {
 }
 
 #container {
-    background-image: url('../images/fundo-mobile.png');
+    background-image: url('../images/background-mobile.png');
     background-size: contain;
     height: 400vh;
 }
@@ -101,7 +92,7 @@ header {
     font-size: 2.5rem;
     color: var(--color-neutral-8);
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
 
     &::before {
@@ -130,8 +121,8 @@ a.btn {
     background-color: transparent;
     transition: background-color 0.3s ease;
 }
+
 .btn-default {
-    
     background-color: var(--color-primary-1);
     color: var(--color-neutral-0);
 
@@ -151,7 +142,6 @@ a.btn {
     }
 }
 
-
 #home {
     display: flex;
     flex-direction: column;
@@ -163,9 +153,10 @@ a.btn {
 
     .home-image {
         width: clamp(300px, 50%, 400px);
-        }
+    }
+
     .home-title {
-        color:var(--color-neutral-8);
+        color: var(--color-neutral-8);
         text-align: center;
         font-size: clamp(3rem, 5vw, 4.3rem);
         text-transform: uppercase;
@@ -175,19 +166,21 @@ a.btn {
         span {
             color: var(--color-primary-1);
         }
+    }
 
-}
-.home-description {
-    color: var(--color-neutral-9);
-    text-align: center;
-    font-size:1rem;
-    font-weight: 500;
-    max-width: 600px;
-}
-.home-actions{
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
+    .home-description {
+        color: var(--color-neutral-9);
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        max-width: 600px;
+    }
+
+    .home-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
 }
 
 #trending {
@@ -197,116 +190,70 @@ a.btn {
     gap: 32px;
     align-items: center;
     min-height: calc(100vh - 96px);
+
+    .trending-cards {
+        .trending-card {
+            position: relative;
+
+            img {
+                width: clamp(250px, 30vw, 400px);
+            }
+
+            .treding-rate {
+                background-color: var(--color-neutral-0);
+                position: absolute;
+                bottom: 70px;
+                right: 30px;
+                padding: 6px 12px;
+                border-radius: 8px;
+
+                i {
+                    color: var(--color-secondary-1);
+                }
+            }
+              .treding-card-description {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              font-size: 1.3rem;
+              font-weight: 600;
+              color: var(--color-neutral-8);
+
+              span {
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--color-neutral-7);
+              }
 }
 
-.trending-cards {
-    display: flex;
-    flex-direction: column; /* Mobile: empilhados */
-    align-items: center; /* Centraliza os cards empilhados */
-    gap: 24px; /* Espaçamento entre os cards */
-    width: 100%; /* Ocupa toda a largura disponível */
+        }
+    }
 }
 
-.trending-card {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 12px;
+#about {
+    padding: 32px 4%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
-    text-align: center;
-    width: clamp(300px, 50%, 400px); 
-    max-width: 380px;
-    overflow: hidden;
+    background-color: var(--color-primary-1);
+    background-image: url('../images/about/bg-about.png');
+
 }
 
-/* IMAGEM DENTRO DO CARD: Garante que ela ocupe 100% da largura do seu card */
-.trending-card img {
-    width: 100%; 
-    max-width: 380px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 8px;
+
+        @media (min-width: 768px) {
+            #trending {
+             .trending-cards {
+            display: flex ;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+           background: rgba(255, 0, 0, 0.05); 
+  }
+
+           .trending-card {
+             flex: 0 1 350px;
+              background: rgba(0, 255, 0, 0.05);
+  }
 }
-
-/* Estilos para o conteúdo textual dentro dos cards */
-.trending-card .trending-rate {
-    margin-top: 10px;
-    font-weight: 600;
-    color: #f5b940; /* Exemplo de cor para a estrela */
-}
-
-.trending-card .trending-description {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--color-neutral-8);
-    margin-top: 8px;
-}
-
-.trending-card .trending-card-description {
-    margin-top: 4px;
-}
-
-.trending-card .trending-card-description span {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-primary-1);
-}
-
-/* ============================================= */
-/* MEDIA QUERIES (DESKTOP)         */
-/* ============================================= */
-
-@media (min-width: 768px) { 
-
-    /* Esconde o botão hamburger no desktop */
-    .btn-mobile {
-        display: none;
-    }
-
-    /* Mostra o menu de navegação na linha no desktop */
-    /* USANDO O ID #nav-links PARA VENCER A ESPECIFICIDADE */
-    #nav-links {
-        display: flex; /* Volta a exibir o menu */
-        flex-direction: row; /* Itens em linha */
-        position: static; /* Remove o posicionamento absoluto */
-        width: auto; /* Largura automática */
-        background-color: transparent; /* Fundo transparente */
-        padding: 0; /* Remove padding */
-        gap: 1.5rem; /* Espaçamento entre os links */
-        box-shadow: none; /* Remove a sombra */
-        
-        /* Garante que o 'top' e 'left' do mobile sejam resetados */
-        top: auto;
-        left: auto;
-    }
-
-    #nav-links li {
-        padding: 0; 
-    }
-
-    #nav-links li a {
-        color: var(--color-neutral-8); 
-        display: inline; 
-    }
-    
-    #nav-links li a:hover {
-        border-bottom: 1px solid var(--color-primary-1); 
-    }
-
-    /* Mostra o botão "Contatar" no desktop */
-    .btn-default {
-        display: block; 
-        padding: 8px 16px; 
-        background-color: var(--color-primary-1); 
-        color: var(--color-neutral-9); 
-        text-decoration: none;
-        border-radius: 5px; 
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-default:hover {
-        background-color: var(--color-primary-2); 
-    }
-}
-}
+        }
