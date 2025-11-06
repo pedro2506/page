@@ -1,9 +1,27 @@
-/* ============================================= */
+:root {
+    --color-neutral-0: #ffffff;
+    --color-neutral-1: #eee4db;
+    --color-neutral-2: #d4c3b6;
+    --color-neutral-3: #b8a99e;
+    --color-neutral-4: #9e8f85;
+    --color-neutral-5: #7e6e65;
+    --color-neutral-6: #5e4e45;
+    --color-neutral-7: #3e2e25;
+    --color-neutral-8: #1e0e05;
+    --color-neutral-9: #000000;
+
+  
+    --color-primary-1: #34815d;
+    --color-primary-2: #2c6e4f;
+    --color-primary-3: #245c42;
+
+    --color-secondary-1: #ffb300;
+}/* ============================================= */
 /* CONFIGURAÇÕES GLOBAIS                         */
 /* ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-@import url('./variables.css');
+/*@import url('variables.css');*/
 
 * {
     margin: 0;
@@ -254,7 +272,50 @@ a.btn {
             
         }
     }
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    
+    .about-image {
+        width: clamp(300px, 5vw, 500px);
+    }
 
+    .abou-info {
+        padding: 24px;
+        border-radius: 20px;
+        background-color: var(--color-primary-2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.21);
+
+        h3 {
+            color: var(--color-neutral-0);
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+
+            span {
+                color: var(--color-secondary-1);
+            }
+        }
+
+        p {
+            color: var(--color-neutral-0);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+    }
+
+    .about-title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--color-neutral-0);
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--color-neutral-0);
 
 }
 
