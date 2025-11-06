@@ -16,12 +16,13 @@
     --color-primary-3: #245c42;
 
     --color-secondary-1: #ffb300;
-}/* ============================================= */
+}
+/* ============================================= */
 /* CONFIGURAÇÕES GLOBAIS                         */
 /* ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-/*@import url('variables.css');*/
+
 
 * {
     margin: 0;
@@ -205,8 +206,8 @@ a.btn {
     padding: 32px 4%;
     display: flex;
     flex-direction: column;
-    gap: 32px;
     align-items: center;
+    gap: 32px;
     min-height: calc(100vh - 96px);
 
     .trending-cards {
@@ -214,16 +215,16 @@ a.btn {
             position: relative;
 
             img {
-                width: clamp(250px, 30vw, 400px);
+                width: clamp(300px, 5vw, 600px);
             }
 
             .treding-rate {
                 background-color: var(--color-neutral-0);
                 position: absolute;
                 bottom: 70px;
-                right: 30px;
-                padding: 6px 12px;
-                border-radius: 8px;
+                right: 25px;
+                padding: 5px 10px;
+                border-radius: 5px;
 
                 i {
                     color: var(--color-secondary-1);
@@ -257,12 +258,9 @@ a.btn {
     background-image: url('../images/about/bg-about.png');
     min-height: calc(100vh - 96px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-   
-  
-  
   
 }
-}
+
 
     .title {
         color: var(--color-neutral-0);
@@ -272,40 +270,41 @@ a.btn {
             
         }
     }
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-    
-    .about-image {
-        width: clamp(300px, 5vw, 500px);
-    }
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
 
-    .abou-info {
-        padding: 24px;
-        border-radius: 20px;
-        background-color: var(--color-primary-2);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.21);
+        .about-image {
+            width: clamp(300px, 50vw, 500px);
+             }
+             .about-info {
+                padding: 24px;
+                border-radius: 20px;
+                background-color: var(--color-primary-2);
+                box-shadow:  4px 6px rgba(0, 0, 0, 0.1);
 
-        h3 {
-            color: var(--color-neutral-0);
-            font-size: 1.8rem;
-            margin-bottom: 4px;
+                h3 {
+                    color: var(--color-neutral-0);
+                    font-size: 1.8rem;
+                    margin-bottom: 4px;
 
-            span {
-                color: var(--color-secondary-1);
-            }
-        }
+                    span {
+                        color: var(--color-secondary-1);
+                    }
+                }
+                    p {
+                        color: var(--color-neutral-0);
+                        font-size: 1rem;
 
-        p {
-            color: var(--color-neutral-0);
-            font-size: 1rem;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-    }
-
+                        span {
+                            color: var(--color-secondary-1);
+                            font-weight: 600;
+                        }
+                    }
+             }
+            
     .about-title {
         font-size: 2rem;
         font-weight: 600;
@@ -316,23 +315,50 @@ a.btn {
         font-size: 1.1rem;
         font-weight: 500;
         color: var(--color-neutral-0);
+        border-radius: 32px;
 
 }
 
 
         @media (min-width: 768px) {
+            #container {
+            background-image: url('../images/background-desktop.png');
+            background-size: cover;
+            background-position: start;
+            background-repeat: no-repeat;
+
+
+            }
             #trending {
              .trending-cards {
             display: flex ;
             justify-content: center;
             flex-wrap: wrap;
             gap: 24px;
-           background: rgba(255, 0, 0, 0.05); 
+          
   }
 
-           .trending-card {
-             flex: 0 1 350px;
-              background: rgba(0, 255, 0, 0.05);
-  }
 }
+}
+         }
+         @media (min-width: 1200px) {
+            #about {
+             margin:4%;
+             justify-content: center;
+
+             .about-content {
+                flex-direction: row;
+                align-items: center;
+                gap: 48px;
+             }
+             .about-image{
+                order: 1;
+             }
+             .about-info:first-child {
+                order: 2;
+             }
+             .about-info:last-child {
+                order: 3;
+             }
+            }
         }
