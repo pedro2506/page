@@ -163,7 +163,6 @@ a.btn {
 
     .home-image {
         width: clamp(300px, 50%, 400px);
-        mix-blend-mode: multiply;
         }
     .home-title {
         color:var(--color-neutral-8);
@@ -228,7 +227,6 @@ a.btn {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 8px;
-    mix-blend-mode: multiply; /* Mantendo o efeito que você já usa */
 }
 
 /* Estilos para o conteúdo textual dentro dos cards */
