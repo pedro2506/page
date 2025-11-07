@@ -282,34 +282,18 @@ a.btn {
 
             .trending-rate {
                 background-color: var(--color-neutral-0);
-<<<<<<< HEAD
-                position: relative;
-                bottom: 70px;
-                right: 25px;
-                padding: 5px 10px;
-                border-radius: 5px;
-=======
                 position: absolute;
                 top: 20px;
                 right: 20px;
                 padding: 5px 12px;
                 border-radius: 8px;
                 font-weight: 600;
->>>>>>> 5d35028 (ok11)
 
                 i {
                     color: var(--color-secondary-1);
                 }
             }
 
-<<<<<<< HEAD
-              span {
-                font-size: 1rem;
-                font-weight: 500;
-                color: var(--color-neutral-7);
-              }
-           }
-=======
             .trending-description {
                 text-align: center;
                 font-size: 1.3rem;
@@ -317,7 +301,6 @@ a.btn {
                 color: var(--color-neutral-0);
                 margin-top: 12px;
             }
->>>>>>> 5d35028 (ok11)
 
             .trending-card-description {
                 text-align: center;
