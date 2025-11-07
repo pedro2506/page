@@ -9,20 +9,17 @@
     --color-neutral-7: #3e2e25;
     --color-neutral-8: #1e0e05;
     --color-neutral-9: #000000;
-
-  
     --color-primary-1: #34815d;
     --color-primary-2: #2c6e4f;
     --color-primary-3: #245c42;
-
     --color-secondary-1: #ffb300;
 }
+
 /* ============================================= */
 /* CONFIGURAÇÕES GLOBAIS                         */
 /* ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
 
 * {
     margin: 0;
@@ -31,8 +28,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    background-color: var(--color-primary-1);
+    background-image: url('../images/background-mobile.png');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
 /* ============================================= */
-/* ESTILOS PARA MOBILE (PADRÃO)                  */
+/* HEADER                                        */
 /* ============================================= */
 
 header {
@@ -40,7 +48,7 @@ header {
     position: sticky;
     top: 0;
     padding: 12px 4%;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .navbar {
@@ -77,35 +85,44 @@ header {
     left: 0;
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &.show {
+        display: flex;
+    }
+
+    li {
+        text-align: center;
+        padding: 0.5rem 0;
+
+        a {
+            color: var(--color-neutral-8);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+
+            &:hover {
+                color: var(--color-primary-1);
+            }
+        }
+    }
 }
 
-#nav-links.show {
-    display: flex;
-}
-
-#nav-links li {
-    text-align: center;
-    padding: 0.5rem 0;
-}
-
-#nav-links li a {
-    color: var(--color-neutral-8);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-#nav-links li a:hover {
-    color: var(--color-primary-1);
-}
+/* ============================================= */
+/* CONTAINER COM BACKGROUND DE GRÃOS             */
+/* ============================================= */
 
 #container {
-    background-image: url('../images/background-mobile.png');
-    background-size: contain;
-    height: 400vh;
+    /* Remove background do container no mobile */
+    /* O background vem do body agora */
+    min-height: 100vh;
+    position: relative;
 }
+
+/* ============================================= */
+/* UTILITÁRIOS                                   */
+/* ============================================= */
 
 .title {
     font-size: 2.5rem;
@@ -113,11 +130,13 @@ header {
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
+    padding-bottom: 16px;
 
     &::before {
         content: '';
         position: absolute;
         bottom: 0;
+        left: 0;
         width: 60px;
         height: 4px;
         background-color: var(--color-primary-1);
@@ -161,6 +180,10 @@ a.btn {
     }
 }
 
+/* ============================================= */
+/* HOME SECTION                                  */
+/* ============================================= */
+
 #home {
     display: flex;
     flex-direction: column;
@@ -177,7 +200,7 @@ a.btn {
     .home-title {
         color: var(--color-neutral-8);
         text-align: center;
-        font-size: clamp(3rem, 5vw, 4.3rem);
+        font-size: clamp(2.5rem, 5vw, 4.3rem);
         text-transform: uppercase;
         line-height: 1.2;
         max-width: 700px;
@@ -199,166 +222,349 @@ a.btn {
         display: flex;
         gap: 15px;
         margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
+/* ============================================= */
+/* TRENDING SECTION                              */
+/* ============================================= */
+
 #trending {
-    padding: 32px 4%;
+    padding: 48px 4%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 48px;
     min-height: calc(100vh - 96px);
+    background-image: url('../images/about/bg-about.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+    .title {
+        color: var(--color-secondary-1);
+
+        &::before {
+            background-color: var(--color-neutral-0);
+        }
+    }
 
     .trending-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        width: 100%;
+
         .trending-card {
             position: relative;
+            width: 100%;
+            max-width: 350px;
+            background-color: var(--color-primary-2);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
 
-            img {
-                width: clamp(300px, 5vw, 600px);
+            &:hover {
+                transform: translateY(-5px);
             }
 
-            .treding-rate {
+            img {
+                width: 100%;
+                max-width: 300px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .trending-rate {
                 background-color: var(--color-neutral-0);
+<<<<<<< HEAD
                 position: relative;
                 bottom: 70px;
                 right: 25px;
                 padding: 5px 10px;
                 border-radius: 5px;
+=======
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                padding: 5px 12px;
+                border-radius: 8px;
+                font-weight: 600;
+>>>>>>> 5d35028 (ok11)
 
                 i {
                     color: var(--color-secondary-1);
                 }
             }
-              .treding-card-description {
-              display: flex;
-              flex-direction: column;
-              text-align: center;
-              font-size: 1.3rem;
-              font-weight: 600;
-              color: var(--color-neutral-8);
 
+<<<<<<< HEAD
               span {
                 font-size: 1rem;
                 font-weight: 500;
                 color: var(--color-neutral-7);
               }
            }
+=======
+            .trending-description {
+                text-align: center;
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--color-neutral-0);
+                margin-top: 12px;
+            }
+>>>>>>> 5d35028 (ok11)
 
+            .trending-card-description {
+                text-align: center;
+                margin-top: 4px;
+
+                span {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: var(--color-neutral-1);
+                }
+            }
         }
     }
 }
+
+/* ============================================= */
+/* ABOUT SECTION                                 */
+/* ============================================= */
 
 #about {
-    padding: 32px 4%;
+    padding: 48px 4%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
+    gap: 32px;
     background-color: var(--color-primary-1);
     background-image: url('../images/about/bg-about.png');
+    background-size: cover;
+    background-position: center;
     min-height: calc(100vh - 96px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  
-}
-
+    position: relative;
 
     .title {
-        color: var(--color-neutral-0);
+        color: var(--color-secondary-1);
 
         &::before {
-            background-color: var(--color-secondary-1);
-            
+            background-color: var(--color-neutral-0);
         }
     }
+
     .about-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 24px;
+        width: 100%;
 
         .about-image {
-            width: clamp(300px, 50vw, 500px);
-             }
-             .about-info {
-                padding: 24px;
-                border-radius: 20px;
-                background-color: var(--color-primary-2);
-                box-shadow:  4px 6px rgba(0, 0, 0, 0.1);
+            width: clamp(300px, 80%, 500px);
+        }
+
+        .about-info {
+            padding: 24px;
+            border-radius: 20px;
+            background-color: var(--color-primary-2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            h3 {
+                color: var(--color-neutral-0);
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+
+                span {
+                    color: var(--color-secondary-1);
+                }
+            }
+
+            p {
+                color: var(--color-neutral-0);
+                font-size: 1rem;
+                line-height: 1.6;
+
+                span {
+                    color: var(--color-secondary-1);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+/* ============================================= */
+/* PRODUCTS SECTION                              */
+/* ============================================= */
+
+#products {
+    padding: 48px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    background-image: url('../images/about/bg-about.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: calc(100vh - 96px);
+    position: relative;
+
+    .title {
+        color: var(--color-secondary-1);
+
+        &::before {
+            background-color: var(--color-neutral-0);
+        }
+    }
+
+    .products-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        width: 100%;
+
+        .product-card {
+            width: 100%;
+            max-width: 350px;
+            background-color: var(--color-primary-2);
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            img {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                margin-bottom: 16px;
+            }
+
+            .product-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
 
                 h3 {
                     color: var(--color-neutral-0);
-                    font-size: 1.8rem;
-                    margin-bottom: 4px;
-
-                    span {
-                        color: var(--color-secondary-1);
-                    }
+                    font-size: 1.5rem;
+                    font-weight: 600;
                 }
-                    p {
-                        color: var(--color-neutral-0);
-                        font-size: 1rem;
 
-                        span {
-                            color: var(--color-secondary-1);
-                            font-weight: 600;
-                        }
-                    }
-             }
-            
-    .about-title {
-        font-size: 2rem;
-        font-weight: 600;
-        color: var(--color-neutral-0);
-    }
-
-    .about-description {
-        font-size: 1.1rem;
-        font-weight: 500;
-        color: var(--color-neutral-0);
-        border-radius: 32px;
-
-}
-
-
-        @media (min-width: 768px) {
-            #container {
-            background-image: url('../images/background-desktop.png');
-            background-size: cover;
-            background-position: start;
-            background-repeat: no-repeat;
-
-
-            }
-            #trending {
-             .trending-cards {
-            display: flex ;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 24px;
-          
-  }
-
-}
-}
-         }
-         @media (min-width: 1200px) {
-            #about {
-             margin:4%;
-             justify-content: center;
-
-             .about-content {
-                flex-direction: row;
-                align-items: center;
-                gap: 48px;
-             }
-             .about-image{
-                order: 1;
-             }
-             .about-info:first-child {
-                order: 2;
-             }
-             .about-info:last-child {
-                order: 3;
-             }
+                span {
+                    font-size: 1rem;
+                    color: var(--color-neutral-1);
+                    font-weight: 400;
+                    line-height: 1.4;
+                }
             }
         }
+    }
+}
+
+/* ============================================= */
+/* MEDIA QUERIES - TABLET (768px+)              */
+/* ============================================= */
+
+@media (min-width: 768px) {
+    html, body {
+        background-image: url('../images/background-desktop.png');
+        background-size: cover;
+    }
+
+    #trending .trending-cards,
+    #products .products-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px;
+
+        .trending-card,
+        .product-card {
+            flex: 1 1 calc(50% - 16px);
+            max-width: 320px;
+        }
+    }
+}
+
+/* ============================================= */
+/* MEDIA QUERIES - DESKTOP (1024px+)            */
+/* ============================================= */
+
+@media (min-width: 1024px) {
+    #trending,
+    #products {
+        padding: 80px 8%;
+    }
+
+    #trending .trending-cards,
+    #products .products-cards {
+        gap: 40px;
+
+        .trending-card,
+        .product-card {
+            flex: 1 1 calc(33.333% - 27px);
+            max-width: 300px;
+        }
+    }
+}
+
+/* ============================================= */
+/* MEDIA QUERIES - LARGE DESKTOP (1200px+)      */
+/* ============================================= */
+
+@media (min-width: 1200px) {
+    #about {
+        margin: 4%;
+        justify-content: center;
+
+        .about-content {
+            flex-direction: row;
+            align-items: center;
+            gap: 48px;
+            max-width: 1400px;
+
+            .about-image {
+                order: 2;
+                flex: 1;
+            }
+
+            .about-info:first-of-type {
+                order: 1;
+                flex: 1;
+            }
+
+            .about-info:last-of-type {
+                order: 3;
+                flex: 1;
+            }
+        }
+    }
+
+    #trending .trending-cards,
+    #products .products-cards {
+        .trending-card,
+        .product-card {
+            flex: 1 1 calc(25% - 30px);
+            max-width: 280px;
+        }
+    }
+}
