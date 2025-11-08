@@ -312,8 +312,8 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 Para dúvidas, sugestões ou oportunidades:
 
-- 📧 Email: t3pedropaulo@gmail.com@example.com
-- 💼 LinkedIn: [Pedro Miranda](https://www.linkedin.com/in/pedro-miranda-510471b4/))
+- 📧 Email: t3pedropaulo@gmail.com
+- 💼 LinkedIn: (https://www.linkedin.com/in/pedro-miranda-510471b4/))
 - 🐦 : 
 
 ---
