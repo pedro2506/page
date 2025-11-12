@@ -281,12 +281,13 @@ O projeto foi desenvolvido seguindo a metodologia **Mobile First** com breakpoin
   <br><br>
   
   **Desenvolvido por [Pedro](https://github.com/SEU-USERNAME)**
-  
-  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SEU-USERNAME)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/SEU-PERFIL)
-  [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://seu-portfolio.com)
-  
-</div>
+   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pedro2506)<br>
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pedro-miranda-510471b4/)<br>
+📧 Email: t3pedropaulo@gmail.com<br>
+💬 Projeto criado com fins educacionais e para portfólio.<br>
+📅 Criado em **Novembro de 2025**  
+
+---
 
 ---
 
